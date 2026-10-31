@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://cii62qv3adcak"]
+
+[ext_resource type="Texture2D" uid="uid://dgskb6tgkxuxl" path="res://assets/Demon-2-Sheet.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://cfsj0ace7frx8" path="res://scenes/enemy.gd" id="1_md0e3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(48, 0, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(48, 30, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(48, 60, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(48, 90, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(48, 120, 24, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nenq2"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(48, 150, 24, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbfph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nenq2")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4187i"]
+radius = 4.0
+height = 14.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1363002673]
+script = ExtResource("1_md0e3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1163708913]
+position = Vector2(2.5, -3)
+scale = Vector2(0.9583333, 1)
+sprite_frames = SubResource("SpriteFrames_qbfph")
+animation = &"walk"
+frame_progress = 0.88995886
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=361892864]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_4187i")
+
+[node name="FloorRayCast2D" type="RayCast2D" parent="." unique_id=387742769]
