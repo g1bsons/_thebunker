@@ -29,6 +29,6 @@ I used alot of ChatGPT this time around as I couldnt quite get Claude to coopera
 
 {Make a list of things that you need to fix, improve, and add in the future.}
 
-- Item 1
-- Item 2
-- Item 3
+- Hide the contact outlines on the platforms and the characters 
+- Import and apply the correct asset texture to the background and platforms
+- Add the combat aspect of the game and be able to fight enemies and collect the loot they drop
